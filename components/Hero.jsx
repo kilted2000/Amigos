@@ -5,7 +5,7 @@ import Logo from './Logo';
 const Hero = () => (
   <div className="row">
   <div className="col-md-6 col-sm-12">
-    <h1 className="big-heading mb-5">Dog Walking is Better with Two.</h1>
+    <h1 className="big-heading mb-5">Dog Wallllllking is Better with Two.</h1>
     <Link
     href="">Sign In
     </Link>

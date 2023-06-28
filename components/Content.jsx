@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Button } from 'reactstrap';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandSpock } from '@fortawesome/free-solid-svg-icons';
 import contentData from '../utils/contentData';
@@ -11,14 +11,12 @@ const Content = () => (
       
       <h3 className="feature">Easy to use.</h3>
       <p className="fd">Find furry companions near you. </p>
-<Button>
-    Click Me
-  </Button>
+
 </div>
     </div>
     <div className="col-sm-12 col-md-4 des">
     
-      <h3 className="feature">Never lose your newwwwww friends.</h3>
+      <h3 className="feature">Never lose your new friends.</h3>
 
       <p className="fd"> Quickly get togther with all you new puppy pals.</p>
     </div>
