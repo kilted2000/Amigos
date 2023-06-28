@@ -10,7 +10,9 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  ButtonGroup,
+  Button
 } from 'reactstrap';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Link from "next/link"
@@ -23,41 +25,40 @@ const NavBar = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div className="nav-container" data-testid="navbar">
-      <Navbar color="light" light expand="md">
+    <div className="header" >
+      <div className='navbar navbar-expand-lgbar-dark nav' id="title">
       
     
-        <Container>
-          <NavbarBrand className="logo" />
-          <NavbarToggler onClick={toggle} data-testid="navbar-toggle" />
-          <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar data-testid="navbar-items">
-              <NavItem>
-                <PageLink href="/" className="nav-link" testId="navbar-home">
-                  Home
-                </PageLink>
-              </NavItem>
-              <NavItem>
-                    <PageLink href="#footer" className="nav-link" testId="navbar-csr">
-                   Contact
-                    </PageLink>
-                  </NavItem>
-                  <NavItem>
-                    <PageLink href="#pricing" className="nav-link" testId="navbar-ssr">
-                     Pricing
-                    </PageLink>
-                  </NavItem>
+        <div className='.container-fluid '>
+        <nav className="navbar navbar-expand-lgbar-dark nav">
+            <a className="navbar-brand"></a>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarTogglerDemo01"
+              aria-controls="navbarTogglerDemo01"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <ul className="navbar-nav ms-auto">
+                <li className="navbar-item">
+                  <a className="nav-link" href="#footer">Contact</a>
+                </li>
+                <li className="navbar-item">
+                  <a className="nav-link" href="#pricing">Pricing</a>
+                </li>
+                <li className="navbar-item">
+                  <a className="nav-link" href="#cta">Sign In</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
               {!isLoading && !user && (
                 <>
-                  
-                  <NavItem>
-                    <PageLink href="#cta " className="nav-link" testId="navbar-external">
-                      Sign In
-                    </PageLink>
-                  </NavItem>
-                </>
-              )}
-            </Nav>
             <Nav className="d-none d-md-block" navbar>
               {!isLoading && !user && (
                 <NavItem id="qsLoginBtn">
@@ -157,11 +158,12 @@ const NavBar = () => {
                 </NavItem>
               </Nav>
             )}
-          </Collapse>
-        </Container>
-      </Navbar>
+          
+        
+       
+      </div>
     </div>
-  );
+  );)
 };
 
 export default NavBar;
