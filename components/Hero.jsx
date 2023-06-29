@@ -4,7 +4,7 @@ import Logo from './Logo';
 
 const Hero = () => (
   <div className="row" id="title">
-  <div className="col-md-6 col-sm-12">
+  <div className="col-md-6 col-sm-12 container-fluid">
     <h1 className="big-heading mb-5">Dog Walking is Better with Two.</h1>
     <Link
     href="">Sign In

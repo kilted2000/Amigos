@@ -4,9 +4,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.test{
-  border: red 3px solid;
-}
+
 
 #title {
   background-color: #1726ec;
@@ -48,9 +46,8 @@ h1, h2, h3, h4, h5, h6{
   padding: 0 18px;
 }
 .nav-link {
-  font-size: 2.2rem;
+  font-size: 1.2rem;
   font-family: "Montserrat-Light";
-  color: gold;
 }
 .download-button {
   margin: 5% 3% 5% 0;
@@ -85,7 +82,7 @@ h1, h2, h3, h4, h5, h6{
 #features {
   padding: 7% 15%;
   color: #8f8f8f;
-  background-color: white;
+  background-color: #fff;
   position: relative;
   z-index: 1;
 }
