@@ -8,9 +8,9 @@ export default function Index() {
   return (
     <>
       
-      <hr />
+     
       <Content />
-      <hr />
+      
       <Pricing />
       <Cta />
     </>
