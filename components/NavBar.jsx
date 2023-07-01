@@ -12,10 +12,10 @@ const NavBar = () => {
   return (
     <>
       <div className="header">
-        <div id="title">
+        <div id="title" >
           <div className="container-fluid">
-            <Navbar color="body-tertiary" light expand="lg" className='links'>
-              <NavbarBrand href="/">BarkAmigos</NavbarBrand>
+            <Navbar light expand="lg" style={{backgroundColor: "#1726ec"}}>
+              <NavbarBrand href="/" className="links">BarkAmigos</NavbarBrand>
               <NavbarToggler onClick={toggle} />
               <Collapse isOpen={isOpen} navbar>
                 <Nav className="me-auto" navbar>
