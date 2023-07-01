@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const NavBarItem = ({ children, href, className, icon, tabIndex, testId }) => {
   const router = useRouter();
-  const activeClass = 'navbar-item-active';
+   const activeClass = 'navbar-item-active';
   const activeClasses = className ? `${className} ${activeClass}` : activeClass;
 
   return (
