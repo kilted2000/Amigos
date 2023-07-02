@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +17,8 @@ const NavBar = () => {
         <div id="title" >
           <div className="container-fluid ">
             <Navbar light expand="lg" className="links">
-              <NavbarBrand id='heading' href="/" >BarkAmigos</NavbarBrand>
+              
+              <NavbarBrand id='heading' href="/" ><img src="public/namenoback.png" alt="" className='cover'/></NavbarBrand>
               <NavbarToggler onClick={toggle} />
               <Collapse isOpen={isOpen} navbar>
                 <Nav className="me-auto" navbar>
@@ -35,7 +38,7 @@ const NavBar = () => {
               <div className="col-md-6 col-sm-12">
                 <h1 className="big-heading mb-5">Dog Walking is Better with Two.</h1>
                 <button type="button" className="btn btn-dark btn-lg download-button">
-                  Sign In
+                <FontAwesomeIcon icon={faPaw} /> Sign In
                 </button>
                 <button type="button" className="btn btn-dark btn-lg download-button">
                   <i className="fa-solid fa-paw"></i> Sign Up
