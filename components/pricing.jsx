@@ -3,7 +3,7 @@ import React from 'react';
 const Pricing = () => {
     return(
     <div id="pricing">
-      <h2>A Plan for Every Dog's Neeeds</h2>
+      <h2>A Plan for Every Dog's Needs</h2>
       <p>Simple and affordable price plans for your and your dog.</p>
 
       <div className="row">
