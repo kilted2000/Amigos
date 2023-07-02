@@ -15,7 +15,7 @@ const NavBar = () => {
         <div id="title" >
           <div className="container-fluid ">
             <Navbar light expand="lg" className="links">
-              <NavbarBrand href="/" >BarkAmigos</NavbarBrand>
+              <NavbarBrand id='heading' href="/" >BarkAmigos</NavbarBrand>
               <NavbarToggler onClick={toggle} />
               <Collapse isOpen={isOpen} navbar>
                 <Nav className="me-auto" navbar>
