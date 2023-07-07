@@ -54,8 +54,8 @@ const NavBar = () => {
                       navbar
                       data-testid="navbar-menu-mobile">
                       <NavItem>
-                        <PageLink href="/components/Mapping">
-                          Map
+                        <PageLink href="../profile.jsx">
+                          My Profile
                         </PageLink>
                       </NavItem>
                       <NavItem id="qsLogoutBtn">
