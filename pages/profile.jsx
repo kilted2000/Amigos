@@ -7,7 +7,7 @@ const ProfilePage = () => {
     <div>
       <h1>My Profile</h1>
       <ProfileForm />
-      <Link href="/"><a>Home</a></Link>
+      <Link href="/">Home</Link>
     </div>
   );
 };

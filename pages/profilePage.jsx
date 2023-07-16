@@ -13,7 +13,7 @@ export default function PersonalProfile() {
                   style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
                   <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
                     alt="Avatar" className="my-5" style={{ width: '80px' }} fluid />
-                     <Link href="/"><a>Home</a></Link>
+                     <Link href="/">Home</Link>
                   <MDBTypography tag="h5">Marie Horwitz</MDBTypography>
                   <MDBCardText>Web Designer</MDBCardText>
                   <MDBIcon far icon="edit mb-5" />
