@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandSpock } from '@fortawesome/free-solid-svg-icons';
 import contentData from '../utils/contentData';
@@ -24,6 +24,8 @@ const Content = () => (
       <i className="fa-regular fa-calendar-days fa-3x fi"></i>
       <h3 className="feature">Integrated Calendar.</h3>
       <p className="fd">Never miss a doggie date.</p>
+      <Link href="/profile"><a>Profile 1</a></Link>
+      <Link href="/profilePage"><a>profile 2</a></Link>
     </div>
   </div>
   </div>
