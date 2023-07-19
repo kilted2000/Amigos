@@ -1,6 +1,7 @@
 // components/ProfileForm.js
 
 import { useState, useEffect } from 'react';
+//intigrate MongoDB here
 
 const ProfileForm = () => {
   const [name, setName] = useState('');
