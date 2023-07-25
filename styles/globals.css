@@ -4,7 +4,6 @@
 
 body {
   font-family: "Montserrat", sans-serif;
- 
 }
 
 
@@ -34,10 +33,13 @@ h1, h2, h3, h4, h5, h6{
   font-family: "Ubuntu";
   font-size: 2.5rem;
   font-weight: bold;
+ 
 }
 .navbar {
   padding: 0 0 4.5rem;
+
 }
+
 #nav-img{
   font-family: "Ubuntu";
   font-size: 2.5rem;
@@ -51,6 +53,7 @@ h1, h2, h3, h4, h5, h6{
 .nav-link {
   font-size: 1.2rem;
   font-family: "Montserrat-Light";
+  
 }
 .download-button {
   margin: 5% 3% 5% 0;
@@ -63,7 +66,8 @@ h1, h2, h3, h4, h5, h6{
 
 #links{
   background-color: #1726ec;
-  border:3px solid #1726ec;
+  
+ 
 }
 
 
@@ -71,10 +75,11 @@ h1, h2, h3, h4, h5, h6{
   color: #fff;
 }
 
-.cover{
+ .cover{
   height: 7rem;
-
-}
+  
+  background-color: #1726ec;
+} 
 
 .feat {
   display: flex;
@@ -147,7 +152,9 @@ h2 {
   padding: 2rem;
 }
 
-
+.hislop{
+ background-color: #8f8f8f ;
+}
 
 
 #pricing {
@@ -174,6 +181,7 @@ h2 {
 .phone-img {
   position: relative;
   
+  
 }
  @media (max-width: 1020px) {
   #title {
@@ -185,7 +193,11 @@ h2 {
     
   }
 } 
-
+.testing{
+  height: 100%;
+  width: 100%;
+  background-color: #1726ec;
+}
 
 
 #cta {

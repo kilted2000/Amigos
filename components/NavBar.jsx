@@ -16,13 +16,13 @@ const NavBar = () => {
   console.log(user);
   return (
     <>
-      <div className="header">
+      <div className="header hislop">
         <div id="title">
-          <div className="container-fluid" >
-            <Navbar light expand="lg" id="links" >
-              <NavbarBrand id="heading" href="/">
+          <div className="container-fluid navcon" >
+             <Navbar light expand="lg" id="links" > 
+               <NavbarBrand id="heading" href="/">
                 <img src="public/namenoback.png" alt="BarkAmigos Title" className="cover" />
-              </NavbarBrand>
+              </NavbarBrand>  
               <NavbarToggler onClick={toggle} />
               <Collapse isOpen={isOpen} navbar>
                 <Nav className="me-auto" navbar>
@@ -73,7 +73,7 @@ const NavBar = () => {
               </Collapse>
             </Navbar>
 
-            <div className="row">
+            {/* <div className="row">
               <div className="col-md-6 col-sm-12">
                 <h1 className="big-heading mb-5">Dog Walking is Better with Two.</h1>
                 <button type="button" className="btn btn-dark btn-lg download-button">
@@ -91,7 +91,7 @@ const NavBar = () => {
               <div className="phone-img col-md-6 col-sm-12">
                 <img className="rotate_image img-fluid title-image" src="/img-clear.jpeg" alt="logo-mockup" />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
