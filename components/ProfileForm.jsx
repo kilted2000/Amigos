@@ -4,24 +4,28 @@ import { useState, useEffect } from 'react';
 //intigrate MongoDB here
 
 const ProfileForm = () => {
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [dogName, setDogName] = useState('');
-  const [bio, setBio] = useState('');
+  const [breed, setBreed] = useState('');
+  const [personality, setPersonality] = useState('');
 
   useEffect(() => {
     fetch('/api/profile')
       .then((response) => response.json())
       .then((data) => {
-        setName(data.name);
+        setFirstName(data.firstName);
+        setLastName(data.lastName);
         setDogName(data.dogName);
-        setBio(data.bio);
+        setBreed(data.breed);
+        setPersonality(data.personality);
       })
       .catch((error) => console.error(error));
   }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const updatedProfile = { name, dogName, bio };
+    const updatedProfile = { firstName,lastName, dogName, breed, personality};
 
     fetch('/api/profile', {
       method: 'PUT',
@@ -38,17 +42,39 @@ const ProfileForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Name:
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        First Name:
+        <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+      </label>
+      <label>
+        Last Name:
+        <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
       </label>
       <label>
         Dog's Name:
         <input type="text" value={dogName} onChange={(e) => setDogName(e.target.value)} />
       </label>
       <label>
-        Bio:
-        <textarea value={bio} onChange={(e) => setBio(e.target.value)} />
+        Breed:
+        <input value={breed} onChange={(e) => setBreed(e.target.value)} />
       </label>
+      <label>
+        Doggie Personality:
+        <textarea value={personality} onChange={(e) => setPersonality(e.target.value)} />
+      </label>
+      <label>
+        Photos of Doggie:
+        <textarea value={personality} onChange={(e) => setPersonality(e.target.value)} />
+      </label>
+      <div className="form-check">
+      <input className="form-check-input " type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required />
+       <label className="form-check-label" for="invalidCheck3">
+         Agree to terms and conditions
+       </label>
+     <div id="invalidCheck3Feedback" class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+
       <button type="submit">Save Profile</button>
     </form>
 //     <form className="row g-3">
