@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 
 import { CldImage, CldUploadWidget } from 'next-cloudinary';
+import { search, mapImageResources, getFolders } from '../lib/cloudinary';
 //intigrate MongoDB here
 
 const ProfileForm = () => {
@@ -82,7 +83,47 @@ console.log(result);
             );
           }}
         </CldUploadWidget>
+        {/* export async function getStaticProps() {
+  const results = await search({
+    expression: 'folder="barkamigos-user-photos"'
+  });
+
+  const { resources, next_cursor: nextCursor, total_count: totalCount } = results;
+
+  const images = mapImageResources(resources);
+
+  const { folders } = await getFolders();
+
+  return {
+    props: {
+      images,
+      nextCursor,
+      totalCount,
+      folders
+    }
+  }
+} */}
       </label>
+      export async function getStaticProps() {
+  // const results = await search({
+  //   expression: 'folder="barkamigos-user-photos"'
+  // });
+const results = await fetch('https://api.cloudinary.com/v1_1/<cloud_name>/resources/image')
+  const { resources, next_cursor: nextCursor, total_count: totalCount } = results;
+
+  const images = mapImageResources(resources);
+
+  const { folders } = await getFolders();
+
+  return {
+    props: {
+      images,
+      nextCursor,
+      totalCount,
+      folders
+    }
+  }
+}
       <div className="form-check">
         <input
           className="form-check-input "
