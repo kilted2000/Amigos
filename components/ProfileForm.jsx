@@ -196,15 +196,16 @@
 // export default ProfileForm;
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image' 
 import { CldImage, CldUploadWidget } from 'next-cloudinary';
 
-const ProfileForm = () => {
+const ProfileForm = ({ images: defaultImages }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [dogName, setDogName] = useState('');
   const [breed, setBreed] = useState('');
   const [personality, setPersonality] = useState('');
-
+  const [images, setImages] = useState(defaultImages);
   useEffect(() => {
     fetch('/api/profile')
       .then(response => response.json())
@@ -278,7 +279,23 @@ const ProfileForm = () => {
           }}
         </CldUploadWidget>
       </label>
-
+      <ul>
+      {/* <ul className={styles.images}> */}
+          {images.map(image => {
+            return (
+              <li key={image.id}>
+                <a href={image.link} rel="noreferrer">
+                  <div className={styles.imageImage}>
+                    <Image width={image.width} height={image.height} src={image.image} alt="" />
+                  </div>
+                  <h3 className={styles.imageTitle}>
+                    { image.title }
+                  </h3>
+                </a>
+              </li>
+            )
+          })}
+        </ul>
       <div className="form-check">
         <input
           className="form-check-input"
