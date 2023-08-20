@@ -199,13 +199,13 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image' 
 import { CldImage, CldUploadWidget } from 'next-cloudinary';
 
-const ProfileForm = ({ images: defaultImages }) => {
+const ProfileForm = ({ images }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [dogName, setDogName] = useState('');
   const [breed, setBreed] = useState('');
   const [personality, setPersonality] = useState('');
-  const [images, setImages] = useState(defaultImages);
+  //const [images, setImages] = useState(defaultImages);
   useEffect(() => {
     fetch('/api/profile')
       .then(response => response.json())
@@ -239,7 +239,7 @@ const ProfileForm = ({ images: defaultImages }) => {
       .catch(error => console.error(error));
   };
 
-  return (
+  return ( <>
     <form onSubmit={handleSubmit}>
       <label>
         First Name:
@@ -253,7 +253,9 @@ const ProfileForm = ({ images: defaultImages }) => {
       <label>
         Dog's Name:
         <input type="text" value={dogName} onChange={e => setDogName(e.target.value)} />
+        
       </label>
+     
       <label>
         Breed:
         <input value={breed} onChange={e => setBreed(e.target.value)} />
@@ -262,6 +264,7 @@ const ProfileForm = ({ images: defaultImages }) => {
         Doggie Personality:
         <textarea value={personality} onChange={e => setPersonality(e.target.value)} />
       </label>
+      
       {/* ... rest of the form ... */}
       <label>
         Photos of Doggie:
@@ -279,9 +282,9 @@ const ProfileForm = ({ images: defaultImages }) => {
           }}
         </CldUploadWidget>
       </label>
-      <ul>
+      {/* <ul> */}
       {/* <ul className={styles.images}> */}
-          {images.map(image => {
+          {/* {images.map(image => {
             return (
               <li key={image.id}>
                 <a href={image.link} rel="noreferrer">
@@ -295,7 +298,7 @@ const ProfileForm = ({ images: defaultImages }) => {
               </li>
             )
           })}
-        </ul>
+        </ul> */}
       <div className="form-check">
         <input
           className="form-check-input"
@@ -315,6 +318,7 @@ const ProfileForm = ({ images: defaultImages }) => {
 
       <button type="submit">Save Profile</button>
     </form>
+    </>
   );
 };
 
