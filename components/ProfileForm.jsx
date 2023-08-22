@@ -198,6 +198,7 @@
 import { useState, useEffect } from 'react';
 //import Image from 'next/image' 
 import { CldImage, CldUploadWidget } from 'next-cloudinary';
+import images from 'next-cloudinary'
 
 const ProfileForm = () => {
   const [firstName, setFirstName] = useState('');
@@ -205,7 +206,7 @@ const ProfileForm = () => {
   const [dogName, setDogName] = useState('');
   const [breed, setBreed] = useState('');
   const [personality, setPersonality] = useState('');
-  const [images, setImages] = useState();
+  
 
   useEffect(() => {
     fetch('/api/profile')
@@ -283,6 +284,21 @@ const ProfileForm = () => {
           }}
         </CldUploadWidget>
       </label>
+      <ul>
+           
+             
+                <li key="1">
+                  <CldImage
+                    width="200"
+                    height="200"
+                    crop="fill"
+                    src="https://res.cloudinary.com/dcqqva4tp/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1691884479/barkamigos-user-photos/dyrbp3tkqabe5um0o10x.jpg"
+                    alt="cropped image"
+                  />
+                </li>
+             
+            
+          </ul>
       {/* <ul> */}
       {/* <ul className={styles.images}> */}
           {/* {images.map(image => {
@@ -324,27 +340,27 @@ const ProfileForm = () => {
 };
 
 export async function getStaticProps() {
-  const results = await fetch(`https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/resources/image`, {
+  const results = await fetch(`https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/folders`, {
     headers: {
       Authorization: `Basic ${Buffer.from(process.env.CLOUDINARY_API_KEY + ':' + process.env.CLOUDINARY_API_SECRET).toString('base64')}`
     }
   }).then(r => r.json());
 
-  const { resources } = results;
+  // const { resources } = results;
 
-  const images = resources.map(resource => ({
-    id: resource.asset_id,
-    title: resource.public_id,
-    image: resource.secure_url,
-    width: resource.width,     // Add width and height
-    height: resource.height,   // properties if available
-  }));
+  // const images = resources.map(resource => ({
+  //   id: resource.asset_id,
+  //   title: resource.public_id,
+  //   image: resource.secure_url,
+  //   width: resource.width,     // Add width and height
+  //   height: resource.height,   // properties if available
+  // }));
 
-  return {
-    props: {
-      images,  // Pass the images array as props
-    },
-  };
+  // return {
+  //   props: {
+  //     images,  // Pass the images array as props
+  //   },
+  // };
 }
 
 
