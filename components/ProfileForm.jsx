@@ -196,16 +196,17 @@
 // export default ProfileForm;
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image' 
+//import Image from 'next/image' 
 import { CldImage, CldUploadWidget } from 'next-cloudinary';
 
-const ProfileForm = ({ images }) => {
+const ProfileForm = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [dogName, setDogName] = useState('');
   const [breed, setBreed] = useState('');
   const [personality, setPersonality] = useState('');
-  //const [images, setImages] = useState(defaultImages);
+  const [images, setImages] = useState();
+
   useEffect(() => {
     fetch('/api/profile')
       .then(response => response.json())
@@ -265,7 +266,7 @@ const ProfileForm = ({ images }) => {
         <textarea value={personality} onChange={e => setPersonality(e.target.value)} />
       </label>
       
-      {/* ... rest of the form ... */}
+     
       <label>
         Photos of Doggie:
         <CldUploadWidget uploadPreset="barkamigos-dog-photos" onUpload={handlePhotoUpload}>

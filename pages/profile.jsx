@@ -5,7 +5,7 @@ import Link from 'next/link';
 const ProfilePage = () => {
   return (
     <div>
-      <h1>Edit Your Profile</h1>
+      <h1>Create or Edit Your Profile</h1>
       <ProfileForm />
       
       <Link href="/">Home</Link>
