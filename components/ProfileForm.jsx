@@ -16,33 +16,36 @@
 //the form should be able to delete photos from cloudinary
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image'
-import { CldImage, CldUploadWidget } from 'next-cloudinary';
-import images from 'next-cloudinary'
 
-const ProfileForm = () => {
+import { CldImage, CldUploadWidget } from 'next-cloudinary';
+
+
+
+const ProfileForm = ( {images} ) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [dogName, setDogName] = useState('');
   const [breed, setBreed] = useState('');
   const [personality, setPersonality] = useState('');
-
-  useEffect(() => {
-    fetch('/api/profile')
-      .then(response => response.json())
-      .then(data => {
-        setFirstName(data.firstName);
-        setLastName(data.lastName);
-        setDogName(data.dogName);
-        setBreed(data.breed);
-        setPersonality(data.personality);
-      })
-      .catch(error => console.error(error));
-  }, []);
-
+  
   function handlePhotoUpload(result) {
     console.log(result);
   }
+  // useEffect(() => {
+  //   fetch('/api/profile')
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setFirstName(data.firstName);
+  //       setLastName(data.lastName);
+  //       setDogName(data.dogName);
+  //       setBreed(data.breed);
+  //       setPersonality(data.personality);
+  //       setImages(data.images);
+  //     })
+  //     .catch(error => console.error(error));
+  // }, []);
+
+
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -99,7 +102,7 @@ const ProfileForm = () => {
         </CldUploadWidget>
       </label>
       <ul>
-        {images.map(image => {
+        {images?.map(image => {
           return (
             <li key={image.id}>
               <CldImage
@@ -110,10 +113,11 @@ const ProfileForm = () => {
                 alt={image.title}
               />
             </li>
-
+  
           );
         })}
       </ul> 
+     
       <div className="form-check">
         <input
           className="form-check-input"
@@ -138,11 +142,4 @@ const ProfileForm = () => {
 
 export default ProfileForm;
 
-export async function getStaticProps() {
-  const results = await fetch(`https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/folders`, {
-    headers: {
-      Authorization: `Basic ${Buffer.from(process.env.CLOUDINARY_API_KEY + ':' + process.env.CLOUDINARY_API_SECRET).toString('base64')}`
-    }
-  }).then(r => r.json());
 
-}
