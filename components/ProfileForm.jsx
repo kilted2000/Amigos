@@ -127,7 +127,7 @@ const ProfileForm = ( {images} ) => {
           aria-describedby="invalidCheck3Feedback"
           required
         />
-        <label className="form-check-label" for="invalidCheck3">
+        <label className="form-check-label" htmlFor="invalidCheck3">
           Agree to terms and conditions
         </label>
         <div id="invalidCheck3Feedback" className="invalid-feedback">
