@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const { expressjwt: jwt } = require('express-jwt');
 const jwksRsa = require('jwks-rsa');
+const axios = require('axios');
 
 const app = express();
 const port = process.env.API_PORT || 3001;
@@ -25,6 +26,7 @@ if (!audience) {
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(cors({ origin: baseUrl }));
+app.use(express.json());
 
 const checkJwt = jwt({
   secret: jwksRsa.expressJwtSecret({
@@ -43,6 +45,15 @@ app.get('/api/shows', checkJwt, (req, res) => {
     msg: 'Your access token was successfully validated!'
   });
 });
-
+app.get('/api/api', async (req, res) => {
+  try {
+    const response = await axios.get('https://cloud.appwrite.io/v1/locale/countries');
+    res.json(response.data);
+  
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 const server = app.listen(port, () => console.log(`API Server listening on port ${port}`));
 process.on('SIGINT', () => server.close());

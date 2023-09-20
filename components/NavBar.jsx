@@ -40,8 +40,8 @@ const NavBar = () => {
                       <NavLink
                         href="/api/auth/login"
                         className="btn btn-primary btn-margin"
-                        tabIndex={0}
-                        testId="navbar-login-desktop">
+                        
+                        >
                         Log in
                       </NavLink>
                     </NavItem>
@@ -52,7 +52,7 @@ const NavBar = () => {
                       id="nav-mobile"
                       className="justify-content-between "
                       navbar
-                      data-testid="navbar-menu-mobile">
+                     >
                       <NavItem>
                         <PageLink href="../profile.jsx">
                           My Profile
@@ -62,7 +62,7 @@ const NavBar = () => {
                         <PageLink
                           href="/api/auth/logout"
                           className="btn btn-link p-1"
-                          testId="navbar-logout-mobile">
+                         >
                           Log out
                         </PageLink>
                       </NavItem>

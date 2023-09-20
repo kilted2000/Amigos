@@ -18,7 +18,7 @@ const Layout = ({ children }) => (
       <link rel="stylesheet" href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css" />
       <title>BarkAmigos</title>
     </Head>
-    <main id="app" className="d-flex flex-column h-100" data-testid="layout">
+    <main id="app" className="d-flex flex-column h-100">
       <NavBar />
       <Container className="container flex-grow-1 mt-5">{children}</Container>
      
