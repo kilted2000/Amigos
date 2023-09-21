@@ -1,7 +1,7 @@
-import { Client, Account, ID, Locale } from 'appwrite';
+import { Client, Account, ID, Locale } from 'node-appwrite';
 
 
-const { Client } = require('node-appwrite');
+//const { Client, Locale } = require('node-appwrite');
 
 const client = new Client()
     .setEndpoint('https://cloud.appwrite.io/v1') // Your Appwrite Endpoint
