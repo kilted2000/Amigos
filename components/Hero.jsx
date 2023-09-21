@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import Logo from './Logo';
-
+import API from '../api/api.js/api'
 
 
 import Link from 'next/link';

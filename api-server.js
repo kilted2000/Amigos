@@ -1,4 +1,4 @@
-require('dotenv').config({ path: './.env.local' });
+//require('dotenv').config({ path: './.env.local' });
 
 const express = require('express');
 const cors = require('cors');
@@ -25,9 +25,14 @@ if (!audience) {
 
 app.use(morgan('dev'));
 app.use(helmet());
-app.use(cors({ origin: baseUrl }));
+app.use(cors());
 app.use(express.json());
+// const corsOptions = {
+//   origin: '*', // Allow requests from your frontend
+//   credentials: true,// Other CORS options...
+// };
 
+// app.use(cors(corsOptions));
 const checkJwt = jwt({
   secret: jwksRsa.expressJwtSecret({
     cache: true,
@@ -55,5 +60,7 @@ app.get('/api/api', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+
 const server = app.listen(port, () => console.log(`API Server listening on port ${port}`));
 process.on('SIGINT', () => server.close());
