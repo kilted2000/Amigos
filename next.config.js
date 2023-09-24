@@ -1,5 +1,6 @@
 module.exports = {
-  poweredByHeader: false
+  poweredByHeader: false,
+
 };
 
 const nextConfig = {    
@@ -7,5 +8,6 @@ const nextConfig = {
     images: {
       loader: 'cloudinary',
       path:'https://res.cloudinary.com/dcqqa4tp/image/upload/'
-    }
+    },
+    
   }

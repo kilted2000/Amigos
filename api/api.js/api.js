@@ -4,11 +4,11 @@ import { Client, Account, ID, Locale } from 'node-appwrite';
 //const { Client, Locale } = require('node-appwrite');
 
 const client = new Client()
-    .setEndpoint('https://cloud.appwrite.io/v1') // Your Appwrite Endpoint
+    .setEndpoint('http://cloud.appwrite.io/v1') // Your Appwrite Endpoint
     .setProject('APPWRITE_ID')                // Your project ID
-    .setKey('BA_LOCALE_ID');         // Your secret API key           
+    .setKey('BA_API_KEY');         // Your secret API key           
   
-
+const account = new Account(client);
     
 const locale = new Locale(client);
 //const apiEndpoint = 'http:localhost:3001/api/api'; // Relative URL for your server's route
