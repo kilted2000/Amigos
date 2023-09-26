@@ -4,7 +4,7 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaw, faBone } from '@fortawesome/free-solid-svg-icons';
+
 import PageLink from './PageLink';
 import AnchorLink from './AnchorLink';
 
