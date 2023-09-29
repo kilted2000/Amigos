@@ -1,6 +1,5 @@
 module.exports = {
   poweredByHeader: false,
-
 };
 
 const nextConfig = {    
