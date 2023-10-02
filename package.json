@@ -37,7 +37,6 @@
     "fauna": "^0.9.1",
     "faunadb": "^4.8.0",
     "fontawesome": "^5.6.3",
-    "fs": "^0.0.1-security",
     "helmet": "^6.0.1",
     "highlight.js": "^11.7.0",
     "jwks-rsa": "^3.0.0",
