@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { Client, Account, ID, Locale } from 'node-appwrite';
 
 

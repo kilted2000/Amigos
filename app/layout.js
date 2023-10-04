@@ -28,7 +28,7 @@ import '../styles/globals.css';
 
 //initFontAwesome();
 
-export default function App({ Component, pageProps }) {
+export function App({ Component, pageProps }) {
   return (
     <UserProvider>
       <Layout>

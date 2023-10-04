@@ -1,4 +1,4 @@
-
+"use client"
 import React, { useState } from 'react';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';

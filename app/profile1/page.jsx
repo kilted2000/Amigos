@@ -1,6 +1,6 @@
 // pages/profile.js
 import React from 'react';
-import ProfileForm from '../components/ProfileForm';
+import ProfileForm from '../../components/ProfileForm';
 import Link from 'next/link';
 
 const ProfilePage = () => {
