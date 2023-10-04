@@ -50,16 +50,16 @@ app.get('/api/shows', checkJwt, (req, res) => {
     msg: 'Your access token was successfully validated!'
   });
 });
-app.get('/api/api', async (req, res) => {
-  try {
-    const response = await axios.get('https://cloud.appwrite.io/v1/locale/countries');
-    res.json(response.data);
+// app.get('/api/api', async (req, res) => {
+//   try {
+//     const response = await axios.get('https://cloud.appwrite.io/v1/locale/countries');
+//     res.json(response.data);
   
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
 
 
 const server = app.listen(port, () => console.log(`API Server listening on port ${port}`));

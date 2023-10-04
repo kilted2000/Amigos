@@ -1,8 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHandSpock } from '@fortawesome/free-solid-svg-icons';
-import contentData from '../utils/contentData';
+
 
 const Content = () => (
   <div id="features">
