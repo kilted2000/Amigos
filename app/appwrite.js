@@ -1,3 +1,4 @@
+"use client"
 import { Client, Account } from 'appwrite';
 
 export const client = new Client();

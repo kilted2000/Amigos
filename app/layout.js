@@ -1,18 +1,8 @@
-export default function RootLayout({
-    // Layouts must accept a children prop.
-    // This will be populated with nested layouts or pages
-    children,
-  }) {
-    return (
-      <html lang="en">
-        <body>{children}</body>
-      </html>
-    )
-  }
+
 
 
   export const metadata = {
-    title: 'Home',
+    title: 'BarkAmigos',
     description: 'Welcome to Next.js',
   }
 
@@ -36,4 +26,16 @@ export function App({ Component, pageProps }) {
       </Layout>
     </UserProvider>
   );
+}
+
+export default function RootLayout({
+  children,
+}) {
+  return (
+    <UserProvider>
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+    </UserProvider>
+  )
 }

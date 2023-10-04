@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import API from '../api/api.js/api'
+
 import Content from '../components/Content';
 import Pricing from '../components/pricing';
 import Cta from '../components/Cta';
