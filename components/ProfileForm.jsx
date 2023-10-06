@@ -24,6 +24,7 @@ import { CldImage, CldUploadWidget } from 'next-cloudinary';
 const ProfileForm = ( {images} ) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState([]);
   const [dogName, setDogName] = useState('');
   const [breed, setBreed] = useState('');
   const [personality, setPersonality] = useState('');
@@ -49,7 +50,7 @@ const ProfileForm = ( {images} ) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const updatedProfile = { firstName, lastName, dogName, breed, personality };
+    const updatedProfile = { firstName, lastName, email, dogName, breed, personality };
 
     fetch('/api/profile', {
       method: 'PUT',
@@ -72,6 +73,10 @@ const ProfileForm = ( {images} ) => {
       <label>
         Last Name:
         <input type="text" value={lastName} onChange={e => setLastName(e.target.value)} />
+      </label>
+      <label>
+        Email:
+        <input type="text" value={email} onChange={e => setEmail(e.target.value)} />
       </label>
       <label>
         Dog's Name:
