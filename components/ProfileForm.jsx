@@ -1,20 +1,5 @@
 
 
-//using the preexisting code when possible, create a form for the user to fill out their profile information including a maximum of 5 photos of their dog uploaded to cloudinary
-//the form should have the following fields:
-//first name
-//last name
-//dog's name
-//breed
-//personality
-//photos of doggie (max 5)
-//submit button
-//the form should be pre-populated with the user's profile information if it exists
-//the form should be able to update the user's profile information
-//the form should be able to upload photos to cloudinary
-//the form should be able to display the user's photos from cloudinary
-//the form should be able to delete photos from cloudinary
-
 import { useState, useEffect } from 'react';
 
 import { CldImage, CldUploadWidget } from 'next-cloudinary';
@@ -32,19 +17,6 @@ const ProfileForm = ( {images} ) => {
   function handlePhotoUpload(result) {
     console.log(result);
   }
-  // useEffect(() => {
-  //   fetch('/api/profile')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setFirstName(data.firstName);
-  //       setLastName(data.lastName);
-  //       setDogName(data.dogName);
-  //       setBreed(data.breed);
-  //       setPersonality(data.personality);
-  //       setImages(data.images);
-  //     })
-  //     .catch(error => console.error(error));
-  // }, []);
 
 
 
