@@ -1,28 +1,23 @@
 "use client"
 import React from 'react';
-
-
-
-
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw, faBone } from '@fortawesome/free-solid-svg-icons';
 import PageLink from './PageLink';
 import AnchorLink from './AnchorLink';
+
+
 const Hero = () => {
 
 return(
   <>
-
-
-
 <div className="row testing ">
  
               <div className="col-md-6 col-sm-12 ">
                 <h1 className="big-heading mb-5">Dog Walking is Better with Two.</h1>
                 <button type="button" className="btn btn-dark btn-lg download-button">
                   <FontAwesomeIcon icon={faPaw} />
-                 
+                
                     <a href="/api/auth/login" tabIndex={0}>
                       Sign In
                     </a>

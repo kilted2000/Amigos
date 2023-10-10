@@ -1,11 +1,18 @@
 "use client"
-import { Client, Account } from 'appwrite';
+import { Client, Account, Locale } from 'appwrite';
+ const client = new Client();
 
-export const client = new Client();
-
+const locale = new Locale(client);
 client
     .setEndpoint('https://cloud.appwrite.io/v1')
     .setProject('APPWRITE_ID'); // Replace with your project ID
 
-export const account = new Account(client);
-export { ID } from 'appwrite';
+
+    const promise = locale.listCountries();
+
+promise.then(function (response) {
+    console.log(response); // Success
+}, function (error) {
+    console.log(error); // Failure
+});
+
