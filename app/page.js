@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+//import React from 'react';
 
 import { Client, Locale } from 'appwrite';
 import Content from '../components/Content';
@@ -11,7 +11,6 @@ export default function Index() {
     <>
      <Hero />
       <Content />
-      
       <Pricing />
       <Cta />
     </>
