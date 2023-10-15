@@ -17,7 +17,7 @@
     "cypress:open": "cypress open"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^2.0.0",
+    "@auth0/nextjs-auth0": "^2.7.0",
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.10.2",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -64,7 +64,8 @@
     "jest": "^25.0.0",
     "jest-environment-jsdom": "^29.3.1",
     "prettier": "^2.8.0",
-    "start-server-and-test": "^1.15.1"
+    "start-server-and-test": "^1.15.1",
+    "webpack": "^5.89.0"
   },
   "jest": {
     "testEnvironment": "jsdom",
