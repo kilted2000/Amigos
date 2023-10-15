@@ -32,10 +32,10 @@ export default function RootLayout({
   children,
 }) {
   return (
-    <UserProvider>
     <html lang="en">
+    <UserProvider>
       <body>{children}</body>
-    </html>
     </UserProvider>
+    </html>
   )
 }
